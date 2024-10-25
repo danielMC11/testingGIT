@@ -1,5 +1,6 @@
 package org.example.adaptadores;
 
 public enum BaseDeDatos {
-	H2
+	H2,
+	SQLITE
 }
