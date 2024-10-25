@@ -14,7 +14,9 @@ public class AdaptadorSqlite implements AdaptadorBaseDeDatos {
 
 	private String url;
 
-	private AdaptadorSqlite(){}
+	private AdaptadorSqlite(){
+		crearTablas();
+	}
 
 	public static AdaptadorSqlite obtenerInstancia(){
 		if(instancia==null){
