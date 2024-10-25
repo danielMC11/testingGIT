@@ -104,5 +104,31 @@ public class ProductoDAO {
 
 
 
+	public List<Producto> buscarPorRangoPrecio(Double precioLimiteInferior, Double precioLimiteSuperior){
+		List<Producto> productos = new ArrayList<>();
+		try(Connection conn = adaptadorBaseDeDatos.obtenerConexion();
+				PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM PRODUCTO WHERE precio >=  ? and precio <= ?");
+		) {
+			pstmt.setDouble(1, precioLimiteInferior);
+			pstmt.setDouble(2, precioLimiteSuperior);
+
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Producto producto = new Producto();
+				producto.setId(rs.getInt("productoId"));
+				producto.setNombre(rs.getString("nombre"));
+				producto.setPrecio(rs.getDouble("precio"));
+				producto.setCantidad(rs.getInt("cantidad"));
+				productos.add(producto);
+			}
+
+		} catch(Exception e){
+			System.err.println("ERROR: " + e.getMessage());
+		}
+		return productos;
+	}
+
+
+
 
 }
