@@ -15,6 +15,8 @@ public class Main {
 
 		ProductoDAO productoDAO = new ProductoDAO(BaseDeDatos.SQLITE);
 
+		String x;
+
 		for(Producto producto : productoDAO.	buscarTodos())
 			System.out.println(producto);
 
