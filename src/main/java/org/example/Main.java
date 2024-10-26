@@ -18,6 +18,8 @@ public class Main {
 
 		ProductoDAO productoDAO = new ProductoDAO(BaseDeDatos.SQLITE);
 
+		Integer x = 123;
+
 		for(Producto producto : productoDAO.	buscarTodos())
 			System.out.println(producto);
 
