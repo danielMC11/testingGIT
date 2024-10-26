@@ -7,6 +7,8 @@ import org.example.modelo.Producto;
 public class Main {
 	public static void main(String[] args) {
 
+		System.out.println("Mensaje Remoto");
+
 		Producto z1 = new Producto("Adasdas", 20.0, 12);
 		Producto z2 = new Producto("aDIOS", 15.0,412);
 		Producto z2point2 = new Producto("Adormir", 23.0, 125);
