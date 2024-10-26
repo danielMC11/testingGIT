@@ -13,6 +13,9 @@ public class Main {
 		Producto z4 = new Producto("KIKE", 12.0, 12);
 		Producto z5 = new Producto("KEVIN", 15.0,52);
 
+
+		System.out.println("CHANGES from local");
+
 		ProductoDAO productoDAO = new ProductoDAO(BaseDeDatos.SQLITE);
 
 		for(Producto producto : productoDAO.	buscarTodos())
