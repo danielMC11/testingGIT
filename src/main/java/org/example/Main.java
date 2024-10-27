@@ -25,5 +25,8 @@ public class Main {
 		for(Producto producto : productoDAO.	buscarTodos())
 			System.out.println(producto);
 
+
+		System.out.println("New update from remote");
+
 	}
 }
