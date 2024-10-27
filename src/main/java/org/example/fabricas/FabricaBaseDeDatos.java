@@ -19,6 +19,8 @@ public class FabricaBaseDeDatos {
 		return switch (baseDeDatos){
 			case H2 -> AdaptadorH2.obtenerInstancia();
 			case SQLITE -> AdaptadorSqlite.obtenerInstancia();
+			case POSTGRES -> null;
+			case MARIADB -> null;
 			default -> throw new IllegalArgumentException("Tipo de base de datos no soportado");
 		};
 	}
